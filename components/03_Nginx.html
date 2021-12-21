@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nginx快速入门 | zxw&#39;s blog </title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/images/photo.png">
+    <meta name="description" content="我的学习之路">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.f773514b.js" as="script"><link rel="preload" href="/assets/js/2.9d89b4e3.js" as="script"><link rel="preload" href="/assets/js/32.7385a155.js" as="script"><link rel="prefetch" href="/assets/js/10.db842651.js"><link rel="prefetch" href="/assets/js/11.840fcf3e.js"><link rel="prefetch" href="/assets/js/12.7f82c5aa.js"><link rel="prefetch" href="/assets/js/13.ed91039c.js"><link rel="prefetch" href="/assets/js/14.91159d1f.js"><link rel="prefetch" href="/assets/js/15.d9122de5.js"><link rel="prefetch" href="/assets/js/16.f225ebc7.js"><link rel="prefetch" href="/assets/js/17.b80925ad.js"><link rel="prefetch" href="/assets/js/18.1734c437.js"><link rel="prefetch" href="/assets/js/19.f6f37d9a.js"><link rel="prefetch" href="/assets/js/20.c859f378.js"><link rel="prefetch" href="/assets/js/21.a264a752.js"><link rel="prefetch" href="/assets/js/22.60232df3.js"><link rel="prefetch" href="/assets/js/23.f9c6d189.js"><link rel="prefetch" href="/assets/js/24.71a3d5d2.js"><link rel="prefetch" href="/assets/js/25.18badde0.js"><link rel="prefetch" href="/assets/js/26.29170d7e.js"><link rel="prefetch" href="/assets/js/27.adaf7201.js"><link rel="prefetch" href="/assets/js/28.eb84f328.js"><link rel="prefetch" href="/assets/js/29.6bc6719b.js"><link rel="prefetch" href="/assets/js/3.aa002010.js"><link rel="prefetch" href="/assets/js/30.7063a5c5.js"><link rel="prefetch" href="/assets/js/31.c8a1a328.js"><link rel="prefetch" href="/assets/js/33.74c76ed3.js"><link rel="prefetch" href="/assets/js/34.944b024d.js"><link rel="prefetch" href="/assets/js/35.75675fa5.js"><link rel="prefetch" href="/assets/js/36.96883f73.js"><link rel="prefetch" href="/assets/js/37.1b33f5de.js"><link rel="prefetch" href="/assets/js/38.e96754b8.js"><link rel="prefetch" href="/assets/js/39.1999a58e.js"><link rel="prefetch" href="/assets/js/4.9c0d3927.js"><link rel="prefetch" href="/assets/js/40.eabf00f9.js"><link rel="prefetch" href="/assets/js/41.4e7c618c.js"><link rel="prefetch" href="/assets/js/42.71da117e.js"><link rel="prefetch" href="/assets/js/43.c6aeaf67.js"><link rel="prefetch" href="/assets/js/44.45aa3e44.js"><link rel="prefetch" href="/assets/js/5.8fb2962b.js"><link rel="prefetch" href="/assets/js/6.7a505dc8.js"><link rel="prefetch" href="/assets/js/7.1ebac3c6.js"><link rel="prefetch" href="/assets/js/8.aa889054.js"><link rel="prefetch" href="/assets/js/9.5f3556e8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">zxw's blog </span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/basic/javascript/01_类型.html" class="nav-link">
+  前端基础
+</a></div><div class="nav-item"><a href="/advanced/vue3/01_创建vue3项目.html" class="nav-link">
+  进阶之路
+</a></div><div class="nav-item"><a href="/components/01_懒加载.html" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/computerBasic/designPatterns/01_发布订阅模式.html" class="nav-link">
+  计算机基础
+</a></div><div class="nav-item"><a href="https://github.com/zhouxiaowan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/basic/javascript/01_类型.html" class="nav-link">
+  前端基础
+</a></div><div class="nav-item"><a href="/advanced/vue3/01_创建vue3项目.html" class="nav-link">
+  进阶之路
+</a></div><div class="nav-item"><a href="/components/01_懒加载.html" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/computerBasic/designPatterns/01_发布订阅模式.html" class="nav-link">
+  计算机基础
+</a></div><div class="nav-item"><a href="https://github.com/zhouxiaowan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>博客</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/components/01_懒加载.html" class="sidebar-link">懒加载</a></li><li><a href="/components/02_css滚动条.html" class="sidebar-link">css滚动条</a></li><li><a href="/components/03_Nginx.html" aria-current="page" class="active sidebar-link">Nginx快速入门</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/components/03_Nginx.html#_3-1-正向代理" class="sidebar-link">3.1 正向代理</a></li><li class="sidebar-sub-header"><a href="/components/03_Nginx.html#_3-2-反向代理" class="sidebar-link">3.2 反向代理</a></li><li class="sidebar-sub-header"><a href="/components/03_Nginx.html#_3-3-负载均衡" class="sidebar-link">3.3 负载均衡</a></li><li class="sidebar-sub-header"><a href="/components/03_Nginx.html#_3-4-动静分离" class="sidebar-link">3.4 动静分离</a></li><li class="sidebar-sub-header"><a href="/components/03_Nginx.html#_3-5-nginx实战" class="sidebar-link">3.5 Nginx实战</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/components/03_Nginx.html#_3-5-1-nginx下载" class="sidebar-link">3.5.1 Nginx下载</a></li><li class="sidebar-sub-header"><a href="/components/03_Nginx.html#_3-5-2-nginx启动" class="sidebar-link">3.5.2 Nginx启动</a></li><li class="sidebar-sub-header"><a href="/components/03_Nginx.html#_3-5-3-nginx配置文件介绍" class="sidebar-link">3.5.3 nginx配置文件介绍</a></li><li class="sidebar-sub-header"><a href="/components/03_Nginx.html#_3-5-4-nginx实战" class="sidebar-link">3.5.4 nginx实战</a></li></ul></li></ul></li><li><a href="/components/04_抓包工具Charles.html" class="sidebar-link">抓包工具-Charles</a></li><li><a href="/components/05_前端性能优化.html" class="sidebar-link">前端性能优化</a></li><li><a href="/components/06_吸顶效果.html" class="sidebar-link">吸顶效果</a></li><li><a href="/components/07_上传图片.html" class="sidebar-link">上传图片</a></li><li><a href="/components/08_vue返回上一页不刷新.html" class="sidebar-link">vue返回某页不刷新</a></li><li><a href="/components/09_WebAssembly.html" class="sidebar-link">WebAssembly</a></li><li><a href="/components/10_css无线滚动.html" class="sidebar-link">css无线滚动</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="nginx"><a href="#nginx" class="header-anchor">#</a> Nginx</h1> <p>Nginx和Apache一样都是web服务器；
+Apache是一个重量级的
+Nginx是一款高性能的HTTP和反向代理的服务器（轻量级），占用内存小，最大支持高达50000并发数</p> <h2 id="_3-1-正向代理"><a href="#_3-1-正向代理" class="header-anchor">#</a> 3.1 正向代理</h2> <p>先举例一个通俗的例子来说明什么是正向代理：比如我们想访问外国网站，但是我们的浏览器是没有办法访问到的，此时大家都会用一个代理进行访问，比如找到一个可以访问外国网站的代理服务器（VPN），我们将请求发送给代理服务器，然后代理服务器去请求外国网站，然后将返回的数据传递给我们<br> <code>安装在客户端的是正向代理</code></p> <h2 id="_3-2-反向代理"><a href="#_3-2-反向代理" class="header-anchor">#</a> 3.2 反向代理</h2> <p>比如我们请求网关，网关请求服务器，然后将数据传给我们。<br> <code>安装在服务端的是反向代理</code></p> <h2 id="_3-3-负载均衡"><a href="#_3-3-负载均衡" class="header-anchor">#</a> 3.3 负载均衡</h2> <p>负载均衡就是将原先请求集中在单个服务器上的情况改为请求分发到多个服务器，将负载分发到不同的服务器；（比如a服务器请求权重为2，b服务器请求权重为1，那么有2/3请求发送到a服务器上，有1/3请求发送到b服务器上）
+Nginx负载均衡有2种：内置策略和扩展策略<br>
+内置策略为轮询(默认)，加权轮询（加权重）,ip_hash(指定负载均衡器按照基于客户端IP的分配方式，这个方法确保了相同的客户端的请求一直发送到相同的服务器，以保证session会话)</p> <h2 id="_3-4-动静分离"><a href="#_3-4-动静分离" class="header-anchor">#</a> 3.4 动静分离</h2> <p>在我们的软件开发中，有些请求是需要后台处理的，有些请求是不需要后台处理的（如：css，jpg等），这些不需要经过后台处理的文件成为静态文件(放在部署静态资源服务器上)，其余放在部署动态资源的服务器。通过一定的规则把动静资源区分来，就可以根据静态资源的特点，将它做缓存<br>
+动静分离大体实现方式有两种：</p> <ul><li>把动态资源和静态资源放到不同的服务器</li> <li>动静资源混合在一起，通过nginx来分开</li></ul> <h2 id="_3-5-nginx实战"><a href="#_3-5-nginx实战" class="header-anchor">#</a> 3.5 Nginx实战</h2> <h3 id="_3-5-1-nginx下载"><a href="#_3-5-1-nginx下载" class="header-anchor">#</a> 3.5.1 Nginx下载</h3> <p>下载地址：http://nginx.org/en/download.html</p> <h3 id="_3-5-2-nginx启动"><a href="#_3-5-2-nginx启动" class="header-anchor">#</a> 3.5.2 Nginx启动</h3> <p>Windows：
+下载好Nginx后，进入当前目录，打开cmd</p> <div class="language- extra-class"><pre class="language-text"><code>nginx.exe
+</code></pre></div><p>打开浏览器，输入localhost:80，看到一个Welcome to nginx!页面，便启动成功了</p> <p>Linux：
+将下载好的Nginx文件放到服务器上</p> <div class="language- extra-class"><pre class="language-text"><code>./configure     // 自动配置
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>make // 编译
+make install //安装
+whereis nginx //看它的位置
+cd 位置
+cd sbin/
+./nginx      //启动
+</code></pre></div><p>常用命令Linux</p> <div class="language- extra-class"><pre class="language-text"><code>./ngixn -v //查看当前ngixn版本号 windows是nginx -v
+./nginx //启动
+./nginx -s stop //停止
+./nginx -s quit //安全退出
+./nginx -s reload //重新加载配置文件
+ps aux|grep nginx //查看nginx进程
+</code></pre></div><h3 id="_3-5-3-nginx配置文件介绍"><a href="#_3-5-3-nginx配置文件介绍" class="header-anchor">#</a> 3.5.3 nginx配置文件介绍</h3> <p>nginx文件由三部分自称：</p> <ul><li>第一部分：全局块<br>
+从配置文件开始到events块之前的内容，是全局块，主要会设置一些影响ngixn服务器整体运行的配置指令。比如</li></ul> <div class="language- extra-class"><pre class="language-text"><code>worker_processes  1; //并发处理的值，值越大，处理的并发数量也越多，但是受到硬件软件等设备的制约
+</code></pre></div><ul><li>第二部分：events块<br>
+events块涉及的指令主要影响Nginx服务器与用户的网络的链接，比如：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>events {
+    worker_connections  1024;  //支持的最大连接为1024
+}
+</code></pre></div><ul><li>第三部分：http块（配置最多的部分）<br>
+http块包括了http全局块和server块</li></ul> <p>http全局块</p> <div class="language-shell extra-class"><pre class="language-shell"><code>include       mime.types<span class="token punctuation">;</span>
+default_type  application/octet-stream<span class="token punctuation">;</span>
+
+<span class="token comment">#log_format  main  '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '</span>
+<span class="token comment">#                  '$status $body_bytes_sent &quot;$http_referer&quot; '</span>
+<span class="token comment">#                  '&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;';</span>
+
+<span class="token comment">#access_log  logs/access.log  main;</span>
+
+sendfile        on<span class="token punctuation">;</span>
+<span class="token comment">#tcp_nopush     on;</span>
+
+<span class="token comment">#keepalive_timeout  0;</span>
+keepalive_timeout  <span class="token number">65</span><span class="token punctuation">;</span>
+
+<span class="token comment">#gzip  on;</span>
+</code></pre></div><p>server块</p> <div class="language-shell extra-class"><pre class="language-shell"><code>server <span class="token punctuation">{</span>
+    listen       <span class="token number">8080</span><span class="token punctuation">;</span> //监听的端口是什么
+    server_name  localhost<span class="token punctuation">;</span> //主机名称
+
+    <span class="token comment">#charset koi8-r;</span>
+
+    <span class="token comment">#access_log  logs/host.access.log  main;</span>
+
+    //路径
+    location / <span class="token punctuation">{</span>
+        root   html<span class="token punctuation">;</span>
+        index  index.html index.htm<span class="token punctuation">;</span>
+        proxy_pass http://localhost:3000<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">#error_page  404              /404.html;</span>
+
+    <span class="token comment"># redirect server error pages to the static page /50x.html</span>
+    <span class="token comment">#</span>
+    error_page   <span class="token number">500</span> <span class="token number">502</span> <span class="token number">503</span> <span class="token number">504</span>  /50x.html<span class="token punctuation">;</span>
+    location <span class="token operator">=</span> /50x.html <span class="token punctuation">{</span>
+        root   html<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span>
+    <span class="token comment">#</span>
+    <span class="token comment">#location ~ \.php$ {</span>
+    <span class="token comment">#    proxy_pass   http://127.0.0.1;</span>
+    <span class="token comment">#}</span>
+
+    <span class="token comment"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span>
+    <span class="token comment">#</span>
+    <span class="token comment">#location ~ \.php$ {</span>
+    <span class="token comment">#    root           html;</span>
+    <span class="token comment">#    fastcgi_pass   127.0.0.1:9000;</span>
+    <span class="token comment">#    fastcgi_index  index.php;</span>
+    <span class="token comment">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span>
+    <span class="token comment">#    include        fastcgi_params;</span>
+    <span class="token comment">#}</span>
+
+    <span class="token comment"># deny access to .htaccess files, if Apache's document root</span>
+    <span class="token comment"># concurs with nginx's one</span>
+    <span class="token comment">#</span>
+    <span class="token comment">#location ~ /\.ht {</span>
+    <span class="token comment">#    deny  all;</span>
+    <span class="token comment">#}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Linux上注意对外访问端口开放</p> <div class="language- extra-class"><pre class="language-text"><code>firewall-cmd --list-all //查看对外开放的访问端口
+firewall-cmd --add-port=8080/tcp --permanent //加入8080端口
+firewall-cmd --reload //重载
+</code></pre></div><h3 id="_3-5-4-nginx实战"><a href="#_3-5-4-nginx实战" class="header-anchor">#</a> 3.5.4 nginx实战</h3> <ul><li><strong>Windows</strong>  (windows环境下)</li></ul> <h4 id="_3-5-3-1-nginx反向代理实例1"><a href="#_3-5-3-1-nginx反向代理实例1" class="header-anchor">#</a> 3.5.3.1 Nginx反向代理实例1</h4> <p>现在我们开始代理我们的一个前端项目
+此时，我启动了一个vue3的项目，访问地址是<code>http://localhost:3000/#/</code>(记住你自己的访问地址)<br>
+然后配置nginx （ngixn配置文件是./conf/nginx.conf）,在配置文件中找到server，然后 添加它要代理的服务地址：<code>proxy_pass http://localhost:3000;</code></p> <div class="language- extra-class"><pre class="language-text"><code>server {
+        listen       8080;
+        server_name  localhost;
+        location / {
+            proxy_pass http://localhost:3000;        // 要代理的服务地址
+        }
+}
+</code></pre></div><p>重启nginx<code>nginx -s reload</code><br>
+此时，你在浏览器中输入http://localhost:8080/#/，<br>
+就可以看到http://localhost:3000页面内容，此时一个简单的ngixn代理就完成了。<br>
+给用户对外暴露的地址是http://localhost:8080/#/，此时用户并不知道真正的服务地址是http://localhost:3000</p> <h4 id="_3-5-3-2-nginx反向代理实例2"><a href="#_3-5-3-2-nginx反向代理实例2" class="header-anchor">#</a> 3.5.3.2 Nginx反向代理实例2</h4> <p>实现效果：根据访问路径跳转到不同的端口服务中<br>
+（/vue路径资源请求不到，但是确实代理过去了？？？？？）</p> <div class="language- extra-class"><pre class="language-text"><code>server {
+    listen       8080;
+    server_name  localhost;
+    location / {
+        proxy_pass http://localhost:8081;        // 要代理的服务地址
+    }
+    location /vue {
+        proxy_pass http://localhost:3000;        // 要代理的服务地址
+    }
+}
+</code></pre></div><p>最简单的测试做法，用webstorm打开两个html页面，a.html和b.html</p> <div class="language- extra-class"><pre class="language-text"><code>server {
+    listen       8080;
+    server_name  localhost;
+    location / {
+        proxy_pass http://localhost:63342/test/a.html?_ijt=l0ag7kseahcm152krt9nc45pho; //替换成你的地址
+    }
+    location /b {
+        proxy_pass http://localhost:63342/test/b.html?_ijt=l0ag7kseahcm152krt9nc45pho; // 替换成你的地址
+    }
+}
+</code></pre></div><p>location 后面路径的一些解释<br>
+location = /a 表示严格匹配
+location ~ /a/ 表示正则表达式，链接中含<code>/a</code>,区分大小写
+location ~* /a/ 表示正则表达式，链接中含<code>/a</code>,不区分大小写
+location ^~ /a/ 表示路径是<code>/a</code>开头</p> <h4 id="_3-5-3-2-nginx反向代理实例3-负载均衡"><a href="#_3-5-3-2-nginx反向代理实例3-负载均衡" class="header-anchor">#</a> 3.5.3.2 Nginx反向代理实例3 负载均衡</h4> <div class="language- extra-class"><pre class="language-text"><code>//myserver这个自己可以任意命名，但是要和下面的一致
+upstream myserver{
+    # ip_hash
+    server 172.16.1.41:8081 weight=1;
+    server 172.16.1.41:8082 weight=2;
+}
+server {
+    listen       8080;
+    server_name  localhost;
+    location / {
+        proxy_pass http://myserver // 和上面名字一致
+    }
+}
+</code></pre></div><p>然后请求访问localhost://8080 会将请求分担到不同的服务器上，比如这里是分担到8081和8082上</p> <h4 id="_3-5-3-3-nginx反向代理实例3-动静分离"><a href="#_3-5-3-3-nginx反向代理实例3-动静分离" class="header-anchor">#</a> 3.5.3.3 Nginx反向代理实例3 动静分离</h4> <p>location / {
+root /image/     // root是加载的静态文件
+}</p> <h4 id="_3-5-3-4-配置高可用"><a href="#_3-5-3-4-配置高可用" class="header-anchor">#</a> 3.5.3.4 配置高可用</h4> <p>当nginx宕机了，那就代理不到了。<br>
+解决办法：用两个nginx服务，主nginx和备用nginx，然后对外提供一个虚拟的ip地址，在两个机器上安装keepalived
+<img src="/images/nginxgaokeyong.png" alt="nginx高可用">
+安装好keepalived之后，会生成一个keepalived文件,修改keepalived.conf .....未完待续<br>
+nginx原理：master和worker<br>
+我们请求页面，首先master收到请求，然后将请求发给下面的worker，worker通过争抢的方式来转发请求</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/components/02_css滚动条.html" class="prev">
+        css滚动条
+      </a></span> <span class="next"><a href="/components/04_抓包工具Charles.html">
+        抓包工具-Charles
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f773514b.js" defer></script><script src="/assets/js/2.9d89b4e3.js" defer></script><script src="/assets/js/32.7385a155.js" defer></script>
+  </body>
+</html>

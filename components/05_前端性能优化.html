@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端性能优化 | zxw&#39;s blog </title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/images/photo.png">
+    <meta name="description" content="我的学习之路">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.f773514b.js" as="script"><link rel="preload" href="/assets/js/2.9d89b4e3.js" as="script"><link rel="preload" href="/assets/js/34.944b024d.js" as="script"><link rel="prefetch" href="/assets/js/10.db842651.js"><link rel="prefetch" href="/assets/js/11.840fcf3e.js"><link rel="prefetch" href="/assets/js/12.7f82c5aa.js"><link rel="prefetch" href="/assets/js/13.ed91039c.js"><link rel="prefetch" href="/assets/js/14.91159d1f.js"><link rel="prefetch" href="/assets/js/15.d9122de5.js"><link rel="prefetch" href="/assets/js/16.f225ebc7.js"><link rel="prefetch" href="/assets/js/17.b80925ad.js"><link rel="prefetch" href="/assets/js/18.1734c437.js"><link rel="prefetch" href="/assets/js/19.f6f37d9a.js"><link rel="prefetch" href="/assets/js/20.c859f378.js"><link rel="prefetch" href="/assets/js/21.a264a752.js"><link rel="prefetch" href="/assets/js/22.60232df3.js"><link rel="prefetch" href="/assets/js/23.f9c6d189.js"><link rel="prefetch" href="/assets/js/24.71a3d5d2.js"><link rel="prefetch" href="/assets/js/25.18badde0.js"><link rel="prefetch" href="/assets/js/26.29170d7e.js"><link rel="prefetch" href="/assets/js/27.adaf7201.js"><link rel="prefetch" href="/assets/js/28.eb84f328.js"><link rel="prefetch" href="/assets/js/29.6bc6719b.js"><link rel="prefetch" href="/assets/js/3.aa002010.js"><link rel="prefetch" href="/assets/js/30.7063a5c5.js"><link rel="prefetch" href="/assets/js/31.c8a1a328.js"><link rel="prefetch" href="/assets/js/32.7385a155.js"><link rel="prefetch" href="/assets/js/33.74c76ed3.js"><link rel="prefetch" href="/assets/js/35.75675fa5.js"><link rel="prefetch" href="/assets/js/36.96883f73.js"><link rel="prefetch" href="/assets/js/37.1b33f5de.js"><link rel="prefetch" href="/assets/js/38.e96754b8.js"><link rel="prefetch" href="/assets/js/39.1999a58e.js"><link rel="prefetch" href="/assets/js/4.9c0d3927.js"><link rel="prefetch" href="/assets/js/40.eabf00f9.js"><link rel="prefetch" href="/assets/js/41.4e7c618c.js"><link rel="prefetch" href="/assets/js/42.71da117e.js"><link rel="prefetch" href="/assets/js/43.c6aeaf67.js"><link rel="prefetch" href="/assets/js/44.45aa3e44.js"><link rel="prefetch" href="/assets/js/5.8fb2962b.js"><link rel="prefetch" href="/assets/js/6.7a505dc8.js"><link rel="prefetch" href="/assets/js/7.1ebac3c6.js"><link rel="prefetch" href="/assets/js/8.aa889054.js"><link rel="prefetch" href="/assets/js/9.5f3556e8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">zxw's blog </span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/basic/javascript/01_类型.html" class="nav-link">
+  前端基础
+</a></div><div class="nav-item"><a href="/advanced/vue3/01_创建vue3项目.html" class="nav-link">
+  进阶之路
+</a></div><div class="nav-item"><a href="/components/01_懒加载.html" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/computerBasic/designPatterns/01_发布订阅模式.html" class="nav-link">
+  计算机基础
+</a></div><div class="nav-item"><a href="https://github.com/zhouxiaowan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/basic/javascript/01_类型.html" class="nav-link">
+  前端基础
+</a></div><div class="nav-item"><a href="/advanced/vue3/01_创建vue3项目.html" class="nav-link">
+  进阶之路
+</a></div><div class="nav-item"><a href="/components/01_懒加载.html" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/computerBasic/designPatterns/01_发布订阅模式.html" class="nav-link">
+  计算机基础
+</a></div><div class="nav-item"><a href="https://github.com/zhouxiaowan" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>博客</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/components/01_懒加载.html" class="sidebar-link">懒加载</a></li><li><a href="/components/02_css滚动条.html" class="sidebar-link">css滚动条</a></li><li><a href="/components/03_Nginx.html" class="sidebar-link">Nginx快速入门</a></li><li><a href="/components/04_抓包工具Charles.html" class="sidebar-link">抓包工具-Charles</a></li><li><a href="/components/05_前端性能优化.html" class="active sidebar-link">前端性能优化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/components/05_前端性能优化.html#_5-1-网络请求优化" class="sidebar-link">5.1 网络请求优化</a></li><li class="sidebar-sub-header"><a href="/components/05_前端性能优化.html#_5-2-首屏优化" class="sidebar-link">5.2 首屏优化</a></li><li class="sidebar-sub-header"><a href="/components/05_前端性能优化.html#_5-3-减少重排重绘" class="sidebar-link">5.3 减少重排重绘</a></li></ul></li><li><a href="/components/06_吸顶效果.html" class="sidebar-link">吸顶效果</a></li><li><a href="/components/07_上传图片.html" class="sidebar-link">上传图片</a></li><li><a href="/components/08_vue返回上一页不刷新.html" class="sidebar-link">vue返回某页不刷新</a></li><li><a href="/components/09_WebAssembly.html" class="sidebar-link">WebAssembly</a></li><li><a href="/components/10_css无线滚动.html" class="sidebar-link">css无线滚动</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="前端性能优化"><a href="#前端性能优化" class="header-anchor">#</a> 前端性能优化</h1> <p>首先浏览器是异步获取资源的<br>
+浏览器渲染引擎：<br>
+一个渲染引擎主要包括：HTML解析器，CSS解析器，Javascript解析器，布局Layout模块，绘图模块等</p> <ul><li>HTML解析器：将HTML解析成DOM树</li> <li>CSS解析器：解析CSS，构建CSSOM（css样式树）</li> <li>JS引擎：绑定事件，修改DOM树和CSS树</li> <li>布局layout：将DOM树和css树合并成一个渲染树</li> <li>绘图模块：根据渲染树来渲染，计算每个节点的几何信息，最终将各个节点绘制到屏幕上</li></ul> <p><strong>css渲染</strong></p> <ol><li>style标签中的样式
+<ul><li>是由html解析器进行解析，是异步解析的</li> <li>不阻塞浏览器的渲染（但是会可能产生闪屏现象）</li> <li>不阻塞DOM解析</li></ul></li> <li>link引入的外部的css样式（推荐使用）
+<ul><li>由css解析器进行解析，是同步解析的</li> <li>阻塞浏览器的渲染，不阻塞DOM的解析</li> <li>阻塞其后js语气的执行（因为js可以改变样式，同时进行的话可能会有冲突）</li></ul></li></ol> <p><strong>js阻塞</strong></p> <ol><li>阻塞DOM解析<br>
+原因：浏览器不知道后续脚本的内容，如果先去解析了下面的DOM，而随后的js删除了后面的所有的DOM，那么浏览器就做了无用功</li> <li>阻塞页面的渲染<br>
+原因：js也可以给DOM设置样式，浏览器等待该脚本执行完毕，渲染出一个最终结果，避免做无用功。</li> <li>阻塞后续js的执行<br>
+原因：维护依赖关系，例如，必须先引入jqury才能使用$</li></ol> <p>优化思路1：优化资源加载的顺序，仅加载需要的资源，剩下的资源通过异步加载的方式加载</p> <p>优化思路2:减少重排重绘<br>
+重排：布局<br>
+重绘：绘制绘图<br>
+重绘是以图层为单位，如果图层中的某个元素需要重绘，那么整个图层都需要重绘。<br>
+开图层的方法：css：will-change属性，css3动画节点，css3 3D属性，video，canvas。<br>
+减少重排重绘的方法：</p> <ol><li>元素位置移动变换尽量使用css3的transform来代替对top，left等的操作。transform的变化仅仅影响图层的组合</li> <li>将多次改变样式属性的操作合并成一次操作</li> <li>visibility不触发重排，依然重绘；display:none触发重排重绘</li></ol> <h2 id="_5-1-网络请求优化"><a href="#_5-1-网络请求优化" class="header-anchor">#</a> 5.1 网络请求优化</h2> <ul><li>缓存</li> <li>合理使用CDN，有效减少网络请求延时</li> <li>DNS缓存</li> <li>对资源进行压缩，减少传输数据大小</li> <li>可以使用Http2，Http3提升资源请求速度</li></ul> <p>CDN称为内容分发网络（Content Distribution Network）</p> <ul><li>它是指通过相互连接的网络系统，利用最靠近每个用户的服务器</li> <li>更快更可靠的将音乐视频图片应用程序及其它文件发送给用户</li></ul> <h2 id="_5-2-首屏优化"><a href="#_5-2-首屏优化" class="header-anchor">#</a> 5.2 首屏优化</h2> <ul><li>服务端渲染</li> <li>懒加载</li> <li>优化资源加载的顺序，仅加载需要的资源，剩下的资源通过异步加载的方式加载</li></ul> <h2 id="_5-3-减少重排重绘"><a href="#_5-3-减少重排重绘" class="header-anchor">#</a> 5.3 减少重排重绘</h2> <ul><li>使用</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/components/04_抓包工具Charles.html" class="prev">
+        抓包工具-Charles
+      </a></span> <span class="next"><a href="/components/06_吸顶效果.html">
+        吸顶效果
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f773514b.js" defer></script><script src="/assets/js/2.9d89b4e3.js" defer></script><script src="/assets/js/34.944b024d.js" defer></script>
+  </body>
+</html>
